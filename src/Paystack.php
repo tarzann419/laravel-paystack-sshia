@@ -340,6 +340,18 @@ class Paystack
         return $this->setHttpResponse("/transaction", 'GET', [])->getData();
     }
 
+
+    /**
+     * Transaction Totals
+     * Total amount received on your account
+     */
+    public function getTotalTransactions()
+    {
+        $this->setRequestOptions();
+
+        return $this->setHttpResponse("/transaction/totals", 'GET', [])->getResponse();
+    }
+
     /**
      * Get the whole response from a get operation
      * @return array
